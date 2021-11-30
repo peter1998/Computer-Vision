@@ -6,6 +6,13 @@ Read an image from file (using cv::imread)
 Display an image in an OpenCV window (using cv::imshow)
 Write an image to a file (using cv::imwrite)
 ```
+## Obstacle
+```
+go to environment variable create a new parameter "OPENCV_SAMPLES_DATA_PATH"
+add the location "...\sample\data" to your value
+restart your IDE
+you can run the sample data automatically.
+```
 ## Explanation
 ```
 This repository contains 
