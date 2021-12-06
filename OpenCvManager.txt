@@ -1,0 +1,54 @@
+Visual Studio Community version 2019 Guide for OpenCV(Computer Vision)
+
+1.Downloads:
+
+[Required]
+https://github.com/opencv/opencv
+
+[Required]
+https://github.com/opencv/opencv_contrib
+
+[Required]
+https://cmake.org/
+
+Build 
+opencv/opencv in CMake3.13.4 label "Where is the source code":
+and create folder build "Where to build the binaries": you can create it in Desktop 
+
+Specift for example VS 2019 Win64 
+
+Search after the Configuration
+OPENCV_EXTRA_MODULES_PATH -> go value -> opencv_contrib-master/modules
+
+2.Visual Studio Configurations
+
+go to build and find file with Name:OpenCV.sln
+
+Build the project 2 times
+One with the button under DEBUG : Release
+and one with the Release, near button x64 for example, 
+Next find in Solution Explorer folder -> CMakeTargets go to INSTALL right click build with Release one time.Build with Debug next time.
+
+3. After all that done, you will got a new directory from 1.-> build inside called install with some files in
+
+Copy them and place whenever you like rename opencv.
+pathEnvironmentVariables = You will have x64-bit folder click then compiler version -16 yours migh be lower there's a bin, click and copy the path.
+ 
+Start menu ->Edit environment Variables->SystemProperties click Environment Variables..->edit in System variables
+Path: click new and paste the path you copy with pathEnvironemtVariables
+
+4. Create c++ empty project in VisualStudio
+right click on it and go to Configuration properties. Ensure Platform:x64
+go to
+ 
+a)VC++ Directories| Include Directories -> <edit> paste Desktop:\opencv\include
+		| Library Directories -> <edit> paste Desktop:\opencv\x64\vc16\lib
+
+b)Then switch Configuration Debug: go to Linker hit Input click Additional dependecies
+edit/add opencv\x64\vc16\lib only the ones who end with d.lib .
+next switch Release and add opencv\x64\vc16\lib only who end with .lib
+
+Ready for include OpenComputerVision code.
+
+
+
